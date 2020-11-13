@@ -1,1 +1,38 @@
-<p>cart works!</p>
+<h2>
+    My Cart
+</h2>
+<!--
+<li *ngFor="let item of itemList" class="list-group-item">
+    <div *ngIf="item.quantity>0">
+        <div class="row">
+            <div class="col">
+                <img src="/assets/TWG.jpg" alt="..." class="img-thumbnail" width="25%">
+                {{item.name}} Quantity: {{item.quantity}}
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary" (click)="removeItemFromCart(item.id)">Remove</button>
+            </div>
+        </div> 
+    </div>
+</li>
+<mat-list>
+    <mat-list-item *ngFor="let item of itemList">
+        <div *ngIf="item.quantity>0">
+            {{item.name}}
+            <span> {{item.quantity}} </span>
+            <button type="button" class="btn btn-primary" (click)="removeItemFromCart(item.id)">Remove</button>
+        </div>
+    </mat-list-item>
+</mat-list>
+-->
+
+<mat-list>
+    <mat-list-item *ngFor="let item of cart">
+        <div *ngIf="item.quantity>0">
+            <img src="{{item.imgUrl}}" class="img-thumbnail" width = "10%">
+                {{item.name}}
+            <span> - Quantity: {{item.quantity}} </span>
+            <button type="button" class="btn btn-primary" (click)="removeItemFromCart(item.id)">Remove</button>
+        </div>
+    </mat-list-item>
+</mat-list>

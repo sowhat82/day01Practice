@@ -15,58 +15,25 @@
       </div>
 <br>
       <div class="container">
-
-        <div class="row">
-          <div class="col">
-            <img src="/assets/TWG.jpg" alt="..." class="img-thumbnail" width="25%">
-              TWG Tea
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-primary">Add</button>
+        <li *ngFor="let item of itemList" class="list-group-item">
+          <div class="row">
+              <div class="col">
+                <img src="{{item.imgUrl}}" alt="..." class="img-thumbnail" width="25%">
+                {{item.name}}
+              </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary" (click)="addItemToCart(item.id)">Add</button>
+            </div>
           </div> 
-        </div>      
-        <br>
-        <div class="row">
-          <div class="col">
-            <img src="/assets/TWG.jpg" alt="..." class="img-thumbnail" width="25%">
-              TWG Tea
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-primary">Add</button>
-          </div> 
-        </div>
-        <br>
-        <div class="row">
-          <div class="col">
-            <img src="/assets/TWG.jpg" alt="..." class="img-thumbnail" width="25%">
-              TWG Tea
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-primary">Add</button>
-          </div> 
-        </div>
-        <br>
-        <div class="row">
-          <div class="col">
-            <img src="/assets/TWG.jpg" alt="..." class="img-thumbnail" width="25%">
-              TWG Tea
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-primary">Add</button>
-          </div> 
-        </div>
-
+        </li>
       </div>
 
 
     </div>
     <div class="col">
-      <h2>
-        My Cart
-      </h2>
 
       <h1>
-        <app-cart></app-cart>
+        <app-cart [cart]="cart"></app-cart>
       </h1>
 
     </div>
