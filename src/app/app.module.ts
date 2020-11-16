@@ -6,11 +6,13 @@ import { CartComponent } from './components/cart.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
+import { ProductlistComponent } from './components/productlist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CartComponent
+    CartComponent,
+    ProductlistComponent
   ],
   exports: [
     AppComponent,

@@ -1,41 +1,11 @@
-<div class="container-sm">
-  <p class="text-justify" class="font-weight-bold"></p>
-  <h1>
-    Shopping Cart
-  </h1>
-</div>
-<br>
+<h1>
+  Alvin's online shopping website
+</h1>
+
 <div class="container">
   <div class="row">
     <div class="col">
-      <div class="row">
-        <h2>
-          Please select
-        </h2>
-      </div>
-<br>
-      <div class="container">
-        <li *ngFor="let item of itemList" class="list-group-item">
-          <div class="row">
-              <div class="col">
-                <img src="{{item.imgUrl}}" alt="..." class="img-thumbnail" width="25%">
-                {{item.name}}
-              </div>
-            <div class="col">
-              <button type="button" class="btn btn-primary" (click)="addItemToCart(item.id)">Add</button>
-            </div>
-          </div> 
-        </li>
-      </div>
-
-
-    </div>
-    <div class="col">
-
-      <h1>
-        <app-cart [cart]="cart"></app-cart>
-      </h1>
-
+      <app-productlist></app-productlist>
     </div>
   </div>
 </div>
