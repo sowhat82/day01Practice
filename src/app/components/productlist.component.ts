@@ -17,7 +17,6 @@ export class ProductlistComponent implements OnInit {
   cart = []
 
 addItemToCart(id): void {
-//    this.itemList[id].quantity += 1
     var found = false;
     for(var i = 0; i < this.cart.length; i++) {
       if (this.cart[i].id == id) {
@@ -27,8 +26,6 @@ addItemToCart(id): void {
       }
     }
     if (found == false){
-      console.info('test')
-
       this.cart.push(this.itemList[id])    
       this.cart[this.cart.length-1].quantity += 1
     }
