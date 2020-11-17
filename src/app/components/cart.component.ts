@@ -13,7 +13,7 @@ export class CartComponent implements OnInit {
   constructor() { }
 
   @Input() cart;
-  @Output() onClick = new EventEmitter();
+  //@Output() onClick = new EventEmitter();
   itemList = ITEMLIST
 
   ngOnInit(): void {
