@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {ITEMLIST} from '../itemList'
 
 @Component({
@@ -8,6 +8,8 @@ import {ITEMLIST} from '../itemList'
 })
 export class ProductlistComponent implements OnInit {
 
+  @Output() addItem = new EventEmitter<number>()
+
   constructor() { }
 
   ngOnInit(): void {
@@ -16,7 +18,11 @@ export class ProductlistComponent implements OnInit {
   itemList = ITEMLIST;
   cart = []
 
-addItemToCart(id): void {
+addItemToCart(id: number): void {
+
+  this.addItem.next(id)
+
+  console.info('here', id)
     var found = false;
     for(var i = 0; i < this.cart.length; i++) {
       if (this.cart[i].id == id) {

@@ -5,7 +5,10 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <app-productlist></app-productlist>
+      <app-productlist (addItem) = "addItem($event)"></app-productlist>
+    </div>
+    <div class="col">
+      <app-cart [cart]="cart"></app-cart>
     </div>
   </div>
 </div>
