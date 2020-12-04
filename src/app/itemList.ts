@@ -1,10 +1,9 @@
-export const ITEMLIST = [
-    {id:0, name: 'TWG', quantity:0, imgUrl: 'https://picsum.photos/id/1/200/300'},
-    {id:1,name: 'GNC', quantity: 0, imgUrl: 'https://picsum.photos/id/2/200/300'},
-    {id:2,name: 'ABC', quantity: 0, imgUrl: 'https://picsum.photos/id/3/200/300'},
-    {id:3,name: 'DEF', quantity: 0, imgUrl: 'https://picsum.photos/id/4/200/300'},
+export var ITEMLIST = [
+    {id:0, name:'Fandi', quantity:0, imgUrl: '/assets/Fendi.JPG'},
+    {id:1,name: 'Hermènsès', quantity: 0, imgUrl: '/assets/kelly.jpg'},
+    {id:2,name: 'Hiewe', quantity: 0, imgUrl: '/assets/Loewe.JPG'},
+    {id:3,name: 'Tori Bird', quantity: 0, imgUrl: '/assets/Tory.JPG'},
+    {id:4,name: 'Herpès', quantity: 0, imgUrl: '/assets/Birkin.jpg'},
   ];
-
-
 
 

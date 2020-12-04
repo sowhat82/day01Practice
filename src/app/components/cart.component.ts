@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {MatListModule} from '@angular/material/list';
+import { Router } from '@angular/router';
 import {ITEMLIST} from '../itemList';
 
 @Component({
@@ -10,9 +11,9 @@ import {ITEMLIST} from '../itemList';
 export class CartComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  @Input() cart;
+  //@Input() cart;
   //@Output() onClick = new EventEmitter();
   itemList = ITEMLIST
 
@@ -25,15 +26,14 @@ export class CartComponent implements OnInit {
 
 //    console.info(this.cart)
 
-    for(var i = 0; i < this.cart.length; i++) {
-      if (this.cart[i].id == id) {
-        this.cart[i].quantity -= 1;
-        if (this.cart[i].quantity == 0) {
-          this.cart.splice(i, 1);
+    for(var i = 0; i < this.itemList.length; i++) {
+      if (this.itemList[i].id == id) {
+        this.itemList[i].quantity -= 1;
+        if (this.itemList[i].quantity == 0) {
+          this.itemList.splice(i, 1);
         }
         break;
       }
     }
-
   }
 }

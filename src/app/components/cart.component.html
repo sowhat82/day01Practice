@@ -1,6 +1,72 @@
+<div>
+    <button [routerLink] = "['/productlist']" class="btn btn-primary float-right">Back</button>    
+</div>
+
 <h2>
     My Cart
 </h2>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div *ngFor="let item of itemList">
+            <div *ngIf="item.quantity>0">
+                <div class="card">
+                    <div class="card-header font-weight-bold">
+                      {{item.name}}
+                    </div>
+                    <div class="card-body">
+                      <div class="card-title">Quantity: {{item.quantity}}</div>
+                      <img src="{{item.imgUrl}}" class="img-thumbnail" width = "80%">
+                      <button class="btn btn-primary" (click) = "removeItemFromCart(item.id)">Remove</button>
+                    </div>
+                </div>    
+            </div>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+<!-- 
+<div *ngFor = "let item of itemList" >
+    <div class="card">
+        <div class="card-header">
+          {{item.name}}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Quantity: {{item.quantity}}</h5>
+          <img src="{{item.imgUrl}}" class="img-thumbnail" width = "80%">
+          <a href="#" class="btn btn-primary">Remove</a>
+        </div>
+    </div>    
+</div> -->
+
+<!-- <div class="container">
+    <div *ngFor="let item of itemList">
+        <div *ngIf="item.quantity>0">
+            <img src="{{item.imgUrl}}" class="img-thumbnail" width = "80%">
+                {{item.name}}
+            <span> - Quantity: {{item.quantity}} </span>
+            <button type="button" class="btn btn-primary" (click)="removeItemFromCart(item.id)">Remove</button>
+        </div>
+    </div>
+</div> -->
+
+<!-- <mat-list>
+    <mat-list-item *ngFor="let item of itemList">
+        <div *ngIf="item.quantity>0">
+            <img src="{{item.imgUrl}}" class="img-thumbnail" width = "80%">
+                {{item.name}}
+            <span> - Quantity: {{item.quantity}} </span>
+            <button type="button" class="btn btn-primary" (click)="removeItemFromCart(item.id)">Remove</button>
+        </div>
+    </mat-list-item>
+</mat-list> -->
+
+
+
+
+
 <!--
 <li *ngFor="let item of itemList" class="list-group-item">
     <div *ngIf="item.quantity>0">
@@ -25,14 +91,3 @@
     </mat-list-item>
 </mat-list>
 -->
-
-<mat-list>
-    <mat-list-item *ngFor="let item of cart">
-        <div *ngIf="item.quantity>0">
-            <img src="{{item.imgUrl}}" class="img-thumbnail" width = "10%">
-                {{item.name}}
-            <span> - Quantity: {{item.quantity}} </span>
-            <button type="button" class="btn btn-primary" (click)="removeItemFromCart(item.id)">Remove</button>
-        </div>
-    </mat-list-item>
-</mat-list>

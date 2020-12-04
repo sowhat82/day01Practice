@@ -1,27 +1,38 @@
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="row">
-          <h2>
-            Product List
-          </h2>
-        </div>
+<div class="container">
+  <div class="row">
+    <!-- <div class="col">
+      <div class="row">
+        <h5>
+          Product List
+        </h5>
+      </div>
+    </div> -->
+    <div class="col">
+      <div class="row float-right">
+          <a [routerLink] = "['/cart']">My Cart (0)</a>
+      </div>
+    </div>
+  </div>
+</div>
+
   <br>
-        <div class="container">
-          <li *ngFor="let item of itemList" class="list-group-item">
-            <div class="row">
-                <div class="col">
-                  <img src="{{item.imgUrl}}" alt="..." class="img-thumbnail" width="50%">
-                  {{item.name}}
-                </div>
-              <div class="col">
-                <button type="button" class="btn btn-primary" (click)="addItemToCart(item.id)">Add</button>
-              </div>
-            </div> 
-          </li>
+<div class="container">
+  <li *ngFor="let item of itemList" class="list-group-item">
+    <div class="row">
+      <h6 class="text-primary">
+        {{item.name}}
+      </h6>
+      <div>
+          <img src="{{item.imgUrl}}" class="img-thumbnail" width="80%">
         </div>
+      <div class="col">
+        <button type="button" class="btn btn-primary" (click)="addItemToCart(item.id)">Add</button>
+      </div>
+    </div> 
+  </li>
+</div>
   
-  
+
       <!-- </div>
       <div class="col">
   
@@ -32,5 +43,3 @@
 
 
       </div> -->
-    </div>
-  </div>

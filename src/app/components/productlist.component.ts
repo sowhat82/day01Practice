@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import {ITEMLIST} from '../itemList'
 
 @Component({
@@ -10,32 +11,32 @@ export class ProductlistComponent implements OnInit {
 
   @Output() addItem = new EventEmitter<number>()
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  itemList = ITEMLIST;
-  cart = []
+   itemList = ITEMLIST;
+
 
 addItemToCart(id: number): void {
 
   this.addItem.next(id)
 
-  console.info('here', id)
     var found = false;
-    for(var i = 0; i < this.cart.length; i++) {
-      if (this.cart[i].id == id) {
-        this.cart[i].quantity += 1;
+    for(var i = 0; i < this.itemList.length; i++) {
+      if (this.itemList[i].id == id) {
+        this.itemList[i].quantity += 1;
         found = true;
         break;
       }
     }
     if (found == false){
-      this.cart.push(this.itemList[id])    
-      this.cart[this.cart.length-1].quantity += 1
+      this.itemList.push(this.itemList[id])    
+      this.itemList[this.itemList.length-1].quantity += 1
     }
 
+    console.info (ITEMLIST)
 }
 
 }

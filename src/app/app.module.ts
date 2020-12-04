@@ -7,6 +7,14 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
 import { ProductlistComponent } from './components/productlist.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: '', component: ProductlistComponent },
+  { path: 'productlist', component: ProductlistComponent },
+  { path: 'cart', component: CartComponent },
+  { path: "**", redirectTo: '/', pathMatch: 'full' },
+  ];
 
 @NgModule({
   declarations: [
@@ -22,7 +30,7 @@ import { ProductlistComponent } from './components/productlist.component';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatListModule,
+    MatListModule, RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
