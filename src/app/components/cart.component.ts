@@ -10,6 +10,8 @@ import {ITEMLIST} from '../itemList';
 })
 export class CartComponent implements OnInit {
 
+  totalCost = 0
+  totalCostComma = ""
 
   constructor(private router: Router) { }
 
@@ -19,7 +21,11 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
 
-    
+    for(var i = 0; i < this.itemList.length; i++) {
+      this.totalCost += this.itemList[i].quantity * this.itemList[i].price
+    }
+
+    this.totalCostComma = this.numberWithCommas(this.totalCost)
   }
 
   removeItemFromCart(id): void {
@@ -29,11 +35,23 @@ export class CartComponent implements OnInit {
     for(var i = 0; i < this.itemList.length; i++) {
       if (this.itemList[i].id == id) {
         this.itemList[i].quantity -= 1;
-        if (this.itemList[i].quantity == 0) {
-          this.itemList.splice(i, 1);
-        }
+        // if (this.itemList[i].quantity == 0) {
+        //   this.itemList.splice(i, 1);
+        // }
         break;
       }
     }
+
+    // update total cost
+    for(var i = 0; i < this.itemList.length; i++) {
+      this.totalCost += this.itemList[i].quantity * this.itemList[i].price
+    }
+
+    this.totalCostComma = this.numberWithCommas(this.totalCost)
+  }
+
+  // to convert number to comma format
+  numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 }

@@ -9,7 +9,7 @@
     </div> -->
     <div class="col">
       <div class="row float-right">
-          <a [routerLink] = "['/cart']">My Cart (0)</a>
+          <a [routerLink] = "['/cart']">My Cart ({{totalItems}})</a>
       </div>
     </div>
   </div>
@@ -28,6 +28,7 @@
       <div class="col">
         <button type="button" class="btn btn-primary" (click)="addItemToCart(item.id)">Add</button>
       </div>
+      <br><br>
     </div> 
   </li>
 </div>
