@@ -30,7 +30,6 @@ export class CartComponent implements OnInit {
 
   removeItemFromCart(id): void {
 
-//    console.info(this.cart)
 
     for(var i = 0; i < this.itemList.length; i++) {
       if (this.itemList[i].id == id) {
@@ -43,6 +42,8 @@ export class CartComponent implements OnInit {
     }
 
     // update total cost
+    this.totalCost = 0
+    
     for(var i = 0; i < this.itemList.length; i++) {
       this.totalCost += this.itemList[i].quantity * this.itemList[i].price
     }

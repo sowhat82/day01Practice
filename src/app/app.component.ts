@@ -8,7 +8,7 @@ import {ITEMLIST} from './itemList'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'testapp';
+  title = 'Online Shopping Addiction Satisfier';
   cart = ITEMLIST;
 
   addItem($event: number){

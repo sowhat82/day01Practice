@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/testapp",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
