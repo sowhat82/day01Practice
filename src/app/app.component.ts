@@ -8,7 +8,7 @@ import {ITEMLIST} from './itemList'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Online Shopping Addiction Satisfier';
+  title = 'Satisfy Ur Cyber Kraving (SUCK)';
   cart = ITEMLIST;
 
   addItem($event: number){
